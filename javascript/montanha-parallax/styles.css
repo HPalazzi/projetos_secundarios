@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+
+:root{
+    --cor1: #333;
+}
+body{
+    font-family: 'Red Hat Text', sans-serif; 
+}
+.container{
+    text-align: center;
+    color: var(--cor1);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(imagens/img1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 3rem;
+}
+.h3{
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-top: 1em;
+}
+p{
+    max-width: 52ch;
+    line-height: 1.5;
+    padding: 1em;
+}
+a{
+    display: inline-block;
+    padding: 1em 3.5em;
+    background-color: var(--color);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 0.3em;
+    font-weight: 700;
+    letter-spacing: .5px;
+    font-size: .875rem;
+}
+.vazia,
+.other{
+    width: 100%;
+    min-height: 60vh;
+    background-color: var(--cor1);
+}
+.segundoContainer{
+    background-image: url(imagens/img2.jpg);
+    background-attachment: fixed;
+    height: 1200px;
+    flex-direction: row;
+    gap: 1.6em;
+}
+.card > a{
+    margin-bottom: 2em;
+}
+.item{
+    display: flex;
+    max-width: 320px;
+    background-color: white;;
+    flex-direction: column;
+    align-items: center;
+    border-radius: .5em;
+    -webkit-box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+    -moz-box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+    box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+}
+.imagem{
+    width: 90%;
+    height: 200px;
+    background-color: lightgrey;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    border-radius: .3em;
+}
+.primeiraImagem{
+    background-image: url(imagens/img3.jpg);
+}
+.segundaImagem{
+    background-image: url(imagens/img4.jpg);
+}
+.terceiraImagem{
+    background-image: url(imagens/img5.jpg);
+}
+
+.outro{
+    background-color: var(--cor1);
+}

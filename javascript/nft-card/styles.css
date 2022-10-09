@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+:root{
+    --cor001:hsl(217, 54%, 11%);
+    --cor002:hsl(216, 50%, 16%);
+    --cor003:hsl(215, 32%, 27%);
+    --cor004:hsl(0, 0%, 100%);
+    --cor005:#1EECEC;
+    --cor006:#8da2bf95;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+body{
+    background-color: var(--cor001);
+    text-align: center;
+}
+main{
+    display: inline-block;
+    background-color: var(--cor002);
+    width: 375px;
+    margin-top: 10vh;
+    border-radius: 15px;
+    margin-bottom: 10vh;
+
+}
+.container{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+.conteudo{
+    text-align: left;
+}
+.texto{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.segunda{
+    float: right;
+
+}
+.imagemPrincipal{
+    border-radius: 10px;
+    margin-top: 12%;
+    width: 100%;
+}
+h3{
+    color: var(--cor004);
+    margin-top: 2%;
+}
+hr{
+    position: absolute;
+    width: 300px;
+    margin-top: 1px;
+    background-color: var(--cor006);
+}
+p{
+    color: var(--cor006);
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.etherium{
+    color: var(--cor005);
+    font-weight: bolder;
+}
+
+strong{
+    color: var(--cor004);
+}
+.avatar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 13%;
+    float: left;
+}
+.criador{
+    position: relative;
+    margin-left: 50px;
+    bottom: -15px;
+    display: inline-flexbox;
+    margin-bottom: 5%;
+}
