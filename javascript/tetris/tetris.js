@@ -1,34 +1,39 @@
 class  Tetris{
-    constructor(imageX, imageY, template){
-        this.imageX = imageX
-        this.imageY = imageY
-        this.template = template
+  constructor(imageX, imageY, template) {
+    this.imageY = imageY;
+    this.imageX = imageX;
+    this.template = template;
+    this.x = squareCountX / 2;
+    this.y = 0;
     }
+    
+    checkBottom(){};
+      
+    checkLeft(){};
+      
+    checkRight(){};
+      
+    moveLeft(){};
+      
+    moveRight(){};
+      
+    moveBottom(){};
+    changeRotation(){};
  };
 
- checkBottom(){};
- 
- checkLeft(){};
- 
- checkRight(){};
- 
- moveLeft(){};
- 
- moveRight(){};
- 
- moveBottom(){};
-
- changeRotation(){};
-
- const imageSquareSize = 24
-const size = 40
-const framePerSecond =  24
-const gameSpeed = 5
-const canvas =  document.querySelector("#canvas")
-const image =  document.querySelector("#image")
-const ctx = canvas.getContext("2d");
-const squareCountX = canvas.width / size
-const squareCountY =  canvas.height /  size
+ const imageSquareSize = 24;
+ const size = 40;
+ const framePerSecond = 24;
+ const gameSpeed = 5;
+ const canvas = document.getElementById("canvas");
+ const nextShapeCanvas = document.getElementById("nextShapeCanvas");
+ const scoreCanvas = document.getElementById("scoreCanvas");
+ const image = document.getElementById("image");
+ const ctx = canvas.getContext("2d");
+ const nctx = nextShapeCanvas.getContext("2d");
+ const sctx = scoreCanvas.getContext("2d");
+ const squareCountX = canvas.width / size;
+ const squareCountY = canvas.height / size;
 
 const shapes = [
     new Tetris(0, 120, [
@@ -92,8 +97,7 @@ let drawRect = (x, y, width, height, color) => {
 let drawBackground = () => {
   drawRect(0, 0, canvas.width, canvas.height, "#bca0dc");
   for (let i = 0; i < squareCountX + 1; i++) {
-    drawRect(
-      size * i - whiteLineThickness, 0, whiteLineThickness, canvas.height, "white");
+    drawRect(size * i - whiteLineThickness, 0, whiteLineThickness, canvas.height, "white");
   }
 
   for (let i = 0; i < squareCountY + 1; i++) {
@@ -132,4 +136,5 @@ let resetVars = () => {
     gameMap = initialTwoDArr
 };
 
+resetVars();
 gameLoop();
