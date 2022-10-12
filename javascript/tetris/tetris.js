@@ -85,7 +85,7 @@ let update = () => {};
 
 let drawBackground = () => {
     drawRect(0,0, canvas.width, canvas.height, "#bca0dc")
-    for(let i = 0;)
+    for(let i = 0;) // 14:20 https://www.youtube.com/watch?v=h1-zQ0SSS6M
 }
 
 let draw = () => {
