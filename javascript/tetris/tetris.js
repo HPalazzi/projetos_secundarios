@@ -75,6 +75,7 @@ let currentShape;
 let nextShape; 
 let score;
 let initialTwoDArr;
+let whiteLineThickness = 4
 
 let gameLoop = () => {
     setInterval(update, 1000/gameSpeed)
@@ -83,10 +84,22 @@ let gameLoop = () => {
 
 let update = () => {};
 
-let drawBackground = () => {
-    drawRect(0,0, canvas.width, canvas.height, "#bca0dc")
-    for(let i = 0;) // 14:20 https://www.youtube.com/watch?v=h1-zQ0SSS6M
+let drawRect = (x, y, width, height, color) => {
+  ctx.fillStyle = color
+  ctx.fillRect(x, y, width, height)
 }
+
+let drawBackground = () => {
+  drawRect(0, 0, canvas.width, canvas.height, "#bca0dc");
+  for (let i = 0; i < squareCountX + 1; i++) {
+    drawRect(
+      size * i - whiteLineThickness, 0, whiteLineThickness, canvas.height, "white");
+  }
+
+  for (let i = 0; i < squareCountY + 1; i++) {
+    drawRect(0, size * i - whiteLineThickness, canvas.width, whiteLineThickness,"white");
+  }
+};
 
 let draw = () => {
     ctx.clearRect(0,0, canvas.width, canvas.height)
