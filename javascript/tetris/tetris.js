@@ -1,10 +1,32 @@
-const imageSquareSize = 24
+class  Tetris{
+    constructor(imageX, imageY, template){
+        this.imageX = imageX
+        this.imageY = imageY
+        this.template = template
+    }
+ };
+
+ checkBottom(){};
+ 
+ checkLeft(){};
+ 
+ checkRight(){};
+ 
+ moveLeft(){};
+ 
+ moveRight(){};
+ 
+ moveBottom(){};
+
+ changeRotation(){};
+
+ const imageSquareSize = 24
 const size = 40
-const fps =  24
+const framePerSecond =  24
 const gameSpeed = 5
 const canvas =  document.querySelector("#canvas")
 const image =  document.querySelector("#image")
-const ctx = canvas.getContext("2d")
+const ctx = canvas.getContext("2d");
 const squareCountX = canvas.width / size
 const squareCountY =  canvas.height /  size
 
@@ -47,23 +69,54 @@ const shapes = [
     ]),
   ];
 
-class  Tetris{
-    constructor(imageX, imageY, template){
-        this.imageX = imageX
-        this.imageY = imageY
-        this.template = template
-    }
- }
+let gameMap;
+let gameOver;
+let currentShape;
+let nextShape; 
+let score;
+let initialTwoDArr;
 
- checkBottom(){}
- 
- checkLeft(){}
- 
- checkRight(){}
- 
- moveLeft(){}
- 
- moveRight(){}
- 
- moveBottom(){}
- changeRotation(){}
+let gameLoop = () => {
+    setInterval(update, 1000/gameSpeed)
+    setInterval(draw, 1000/framePerSecond)
+};
+
+let update = () => {};
+
+let drawBackground = () => {
+    drawRect(0,0, canvas.width, canvas.height, "#bca0dc")
+    for(let i = 0;)
+}
+
+let draw = () => {
+    ctx.clearRect(0,0, canvas.width, canvas.height)
+    drawBackground();
+    drawSquares();
+    drawCurrentTetris();
+    drawNextShape();
+    if(gameOver){
+        drawGameOver()
+    }
+};
+
+let getRandomShape = () => {
+    return Object.create(shapes [ Math.floor[ Math.random() * shapes.length ] ])
+}
+
+let resetVars = () => {
+    initialTwoDArr = []
+    for(let i = 0; i < squareCountY; i++){
+        let temp = []
+        for(let j = 0; j < squareCountX; j++){
+            temp.push({imageX: -1, imageY: -1});
+        }
+        initialTwoDArr.push(temp)
+    }
+    score = 0
+    gameOver =  false
+    currentShape =  getRandomShape()
+    nextShape = getRandomShape()
+    gameMap = initialTwoDArr
+};
+
+gameLoop();
