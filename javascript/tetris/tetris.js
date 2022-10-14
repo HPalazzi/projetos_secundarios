@@ -105,7 +105,7 @@ let drawBackground = () => {
   }
 };
 
-let draw = () => {
+let draw = () => { // 16:20 https://www.youtube.com/watch?v=h1-zQ0SSS6M&t=996s
     ctx.clearRect(0,0, canvas.width, canvas.height)
     drawBackground();
     drawSquares();
