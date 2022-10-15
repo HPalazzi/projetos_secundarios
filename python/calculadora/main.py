@@ -20,14 +20,9 @@ frame_resultado.grid(row=0, column=0)
 frame_corpo = Frame(janela, width=235, height=268, bg=cor1)
 frame_corpo.grid(row=1, column=0)
 
-## Criando Labels
-
-app_label = Label(frame_resultado, text="0", width=16, height=3, padx=20, pady=5, relief=FLAT, anchor="e", justify=RIGHT, font=('Ivy 16'), bg=cor1, fg=cor5)
-app_label.place(x=0, y=0)
-
 ## Criando Btn
 # 1° Linha
-btnClean = Button(frame_corpo, command = lambda: entrar_valor('%'), text="C", width=11, height=2, font=('Ivy 13 bold'),relief=RAISED, overrelief=RIDGE, bg=cor3)
+btnClean = Button(frame_corpo, command = lambda: limpar_tela(), text="C", width=11, height=2, font=('Ivy 13 bold'),relief=RAISED, overrelief=RIDGE, bg=cor3)
 btnClean.place(x=0, y=0)
 
 btnPorcentagem = Button(frame_corpo, command = lambda: entrar_valor('%'), text="%", width=5, height=2, font=('Ivy 13 bold'),relief=RAISED, overrelief=RIDGE, bg=cor3)
@@ -86,7 +81,7 @@ btn0.place(x=0, y=208)
 btnPonto = Button(frame_corpo, command = lambda: entrar_valor('.'), text=".", width=5, height=2, font=('Ivy 13 bold'),relief=RAISED, overrelief=RIDGE, bg=cor3)
 btnPonto.place(x=118, y=208)
 
-btnResultado = Button(frame_corpo, command = lambda: entrar_valor('='), text="=", width=5, height=2, font=('Ivy 13 bold'),relief=RAISED, overrelief=RIDGE, bg=cor4)
+btnResultado = Button(frame_corpo, command = lambda: calcular(), text="=", width=5, height=2, font=('Ivy 13 bold'),relief=RAISED, overrelief=RIDGE, bg=cor4)
 btnResultado.place(x=177, y=208)
 
 #para armazenar todas as expressões que serão avaliadas
@@ -101,7 +96,7 @@ def entrar_valor(event):
     todos_valores = todos_valores + str(event)
     valor_texto.set(todos_valores)
     
-    app_scream = Label(frame_resultado,textvariable=valor_texto,width=16,height=2, padx=7, relief="flat", anchor="e",bd=0, justify=RIGHT, font=('Ivy 18 '), bg='#37474F', fg=co1)
+    app_scream = Label(frame_resultado,textvariable=valor_texto,width=16,height=3, padx=20, pady=5, relief=FLAT, anchor="e", bd=0, justify=RIGHT, font=('Ivy 16'), bg=cor1, fg=cor5)
     
     app_scream.place(x=0, y=0)
 
@@ -110,5 +105,10 @@ def calcular():
     resultado = str(eval(todos_valores))
     valor_texto.set(resultado)
     todos_valores = ""
+
+def limpar_tela(): 
+    global todos_valores
+    todos_valores = "" 
+    valor_texto.set("")
 
 janela.mainloop()
