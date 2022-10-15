@@ -8,25 +8,30 @@ cor3 = "#6B818C" #Cinza
 
 janela =  Tk()
 janela.title("Calculadora Python")
-janela.geometry("450x400")
+janela.geometry("235x318")
 janela.config(bg=cor1)
 
 # Dividindo a tela em Frames
-frame_resultado = Frame(janela, width=450, height=80, bg=cor1)
+frame_resultado = Frame(janela, width=235, height=50, bg=cor1)
 frame_resultado.grid(row=0, column=0)
 
-frame_corpo = Frame(janela, width=450, height=320)
+frame_corpo = Frame(janela, width=235, height=268)
 frame_corpo.grid(row=1, column=0)
 
 # Criando btn
 
-btnClean = Button(frame_corpo, text="C", width=18, height=2)
+btnClean = Button(frame_corpo, text="C", width=11, height=2)
 btnClean.place(x=0, y=0)
+
+btnPorcentagem = Button(frame_corpo, text="%", width=11, height=2)
+btnPorcentagem.place(x=118,y=0)
+
+btnDivisao = Button(frame_corpo, text="÷", width=11, height=2)
+btnDivisao.place(x=177)
+
 btnSoma = Button(frame_corpo, text="+")
 btnSubtracao = Button(frame_corpo, text="-")
-btnDivisao = Button(frame_corpo, text="÷")
 btnMultiplicacao = Button(frame_corpo, text="X")
-btnPorcentagem = Button(frame_corpo, text="%")
 btnResultado = Button(frame_corpo, text="=")
 
 btn1 = Button(frame_corpo, text="1")
